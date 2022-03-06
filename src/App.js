@@ -9,25 +9,28 @@ const category = 'Posts of the week'
 function App() {
   return (
     <>
-      <Header title='Blog'>
+      <Header>
       <h3>{category}</h3>  
       </Header>
 
       <hr />
 
       <Post 
+        likes={20}
         post={{
           title: 'News 01',
           subtitle: 'Subtitle 01'
         }}
       />
       <Post 
+        likes={30}
         post={{
           title: 'News 02',
           subtitle: 'Subtitle 02'
         }}
       />
       <Post 
+        likes={10}
         post={{
           title: 'News 03',
           subtitle: 'Subtitle 03'
