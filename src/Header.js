@@ -6,7 +6,7 @@ import { ThemeContext } from './ThemeContext'
 
 import Button from './Button'
 
-import styles from './Header.css'
+import styles from './Header.scss'
 
 export default function Header(props) {
   const { onToggleTheme } = useContext(ThemeContext)
