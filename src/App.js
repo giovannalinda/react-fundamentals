@@ -7,11 +7,21 @@ const category = 'Posts of the week'
 
 // Props(Properties)
 function App() {
+  const [theme, setTheme] = useState('dark')
+
   const [posts, setPosts] = useState([
     { id: Math.random(), title: 'Title #01', subtitle: 'Subtitle #01', likes: 20, read: true },
     { id: Math.random(), title: 'Title #02', subtitle: 'Subtitle #02', likes: 10, read: true },
     { id: Math.random(), title: 'Title #03', subtitle: 'Subtitle #03', likes: 50, read: false },
   ])
+
+  function handleToggleTheme() {
+    setTheme((prevState) => (
+      prevState === 'dark' 
+        ? 'light' 
+        : 'dark'
+    ))
+  }
 
   function handleRefresh() {
     // will only access the value when it is updated
@@ -32,7 +42,10 @@ function App() {
 
   return (
     <>
-      <Header>
+      <Header 
+        theme={theme}
+        onToggleTheme={handleToggleTheme} 
+      >
       <h3>
         {category}
         <button onClick={() => handleRefresh()}>Refresh</button> 
@@ -45,7 +58,9 @@ function App() {
         <Post 
           key={post.id}
           onRemove={handleRemovePost}
-          post={post} />
+          post={post} 
+          theme={theme}
+        />
       ))}
     </>
   )
