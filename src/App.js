@@ -3,25 +3,17 @@ import React, { useState } from 'react'
 import Header from './Header'
 import Post from './Post'
 
+import { ThemeProvider } from './ThemeContext'
+
 const category = 'Posts of the week'
 
 // Props(Properties)
 function App() {
-  const [theme, setTheme] = useState('dark')
-
   const [posts, setPosts] = useState([
     { id: Math.random(), title: 'Title #01', subtitle: 'Subtitle #01', likes: 20, read: true },
     { id: Math.random(), title: 'Title #02', subtitle: 'Subtitle #02', likes: 10, read: true },
     { id: Math.random(), title: 'Title #03', subtitle: 'Subtitle #03', likes: 50, read: false },
   ])
-
-  function handleToggleTheme() {
-    setTheme((prevState) => (
-      prevState === 'dark' 
-        ? 'light' 
-        : 'dark'
-    ))
-  }
 
   function handleRefresh() {
     // will only access the value when it is updated
@@ -41,11 +33,8 @@ function App() {
   }
 
   return (
-    <>
-      <Header 
-        theme={theme}
-        onToggleTheme={handleToggleTheme} 
-      >
+    <ThemeProvider>
+      <Header>
       <h3>
         {category}
         <button onClick={() => handleRefresh()}>Refresh</button> 
@@ -59,10 +48,9 @@ function App() {
           key={post.id}
           onRemove={handleRemovePost}
           post={post} 
-          theme={theme}
         />
       ))}
-    </>
+    </ThemeProvider>
   )
 }
 

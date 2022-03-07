@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import PropTypes from 'prop-types'
 
-export default function Button(props) {
-  console.log(props.theme)
+import { ThemeContext } from './ThemeContext'
 
-  const theme = props.theme
+export default function Button(props) {
+  const { theme } = useContext(ThemeContext)
   
   return (
     <button 
@@ -21,7 +21,6 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-  theme: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
 }

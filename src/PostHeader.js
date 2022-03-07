@@ -15,7 +15,6 @@ export default function PostHeader(props) {
       </strong>
       <Button 
         onClick={() => props.onRemove(props.post.id)} 
-        theme={props.theme}
       >
         x
       </Button>
@@ -24,7 +23,6 @@ export default function PostHeader(props) {
 }
 
 PostHeader.propTypes = {
-  theme: PropTypes.string.isRequired,
   onRemove: PropTypes.func.isRequired,
   post: PropTypes.shape({
     id: PropTypes.number.isRequired,
