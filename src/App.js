@@ -8,9 +8,9 @@ const category = 'Posts of the week'
 // Props(Properties)
 function App() {
   const [posts, setPosts] = useState([
-    { id: Math.random(), title: 'Title #01', subtitle: 'Subtitle #01', likes: 20 },
-    { id: Math.random(), title: 'Title #02', subtitle: 'Subtitle #02', likes: 10 },
-    { id: Math.random(), title: 'Title #03', subtitle: 'Subtitle #03', likes: 50 },
+    { id: Math.random(), title: 'Title #01', subtitle: 'Subtitle #01', likes: 20, read: true },
+    { id: Math.random(), title: 'Title #02', subtitle: 'Subtitle #02', likes: 10, read: true },
+    { id: Math.random(), title: 'Title #03', subtitle: 'Subtitle #03', likes: 50, read: false },
   ])
 
   function handleRefresh() {
@@ -24,6 +24,10 @@ function App() {
         likes: 50,
       }
     ])
+  }
+
+  function handleRemovePost(id) {
+    setPosts(prevState => prevState.filter(post => post.id !== id))
   }
 
   return (
@@ -40,11 +44,8 @@ function App() {
       {posts.map((post) => (
         <Post 
           key={post.id}
-          likes={post.likes}
-          post={{
-            title: post.title,
-            subtitle: post.subtitle,
-          }} />
+          onRemove={handleRemovePost}
+          post={post} />
       ))}
     </>
   )
