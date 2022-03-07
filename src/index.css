@@ -1,13 +1,11 @@
 body {
-  background: #f2f2f2;
-  color: #000;
+  background: #222;
+  color: #fff;
 }
 
 button {
-  background: purple;
   border: 0;
   padding: 12px;
   border-radius: 5px;
   margin: 0 0 0 5px;
-  color: #f2f2f2;
 }

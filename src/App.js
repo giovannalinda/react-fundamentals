@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import Header from './Header'
 import Post from './Post'
+import styles from './App.css'
 
 import { ThemeProvider } from './ThemeContext'
 
@@ -35,7 +36,7 @@ function App() {
   return (
     <ThemeProvider>
       <Header>
-      <h3>
+      <h3 className={styles.title}>
         {category}
         <button onClick={() => handleRefresh()}>Refresh</button> 
       </h3> 
