@@ -15,8 +15,6 @@ function App() {
     { id: Math.random(), title: 'Title #03', subtitle: 'Subtitle #03', likes: 50, read: false, removed: true  },
   ])
 
-  const category = 'Posts of the week'
-
   function handleRefresh() {
     // will only access the value when it is updated
     setPosts((prevState) => [
@@ -44,7 +42,6 @@ function App() {
     <ThemeProvider>
       <Header>
       <Title as="h2">
-        {category}
         <button onClick={() => handleRefresh()}>Refresh</button> 
       </Title> 
       </Header>
