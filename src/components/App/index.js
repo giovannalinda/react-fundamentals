@@ -3,11 +3,9 @@ import React, { useState } from 'react'
 import Header from '../Header'
 import Post from '../Post'
 
-import styles from './App.scss'
-
 import { ThemeProvider } from '../../context/ThemeContext'
 
-const category = 'Posts of the week'
+import { Title } from './styles'
 
 // Props(Properties)
 function App() {
@@ -16,6 +14,8 @@ function App() {
     { id: Math.random(), title: 'Title #02', subtitle: 'Subtitle #02', likes: 10, read: true, removed: false },
     { id: Math.random(), title: 'Title #03', subtitle: 'Subtitle #03', likes: 50, read: false, removed: true  },
   ])
+
+  const category = 'Posts of the week'
 
   function handleRefresh() {
     // will only access the value when it is updated
@@ -43,10 +43,10 @@ function App() {
   return (
     <ThemeProvider>
       <Header>
-      <h3 className={styles.title}>
+      <Title as="h2">
         {category}
         <button onClick={() => handleRefresh()}>Refresh</button> 
-      </h3> 
+      </Title> 
       </Header>
 
       <hr />

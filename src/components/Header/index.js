@@ -6,9 +6,7 @@ import { ThemeContext } from '../../context/ThemeContext'
 
 import Button from '../Button'
 
-const Title = styled.h1`
-  color: purple;
-`
+import Title from '../Title'
 
 export default function Header(props) {
   const { onToggleTheme } = useContext(ThemeContext)
