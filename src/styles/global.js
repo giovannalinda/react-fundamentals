@@ -3,8 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 export default createGlobalStyle`
   body {
     font-family: sans-serif;
-    background: #222;
-    color: #f1f1f1;
+    background: ${props => props.theme.backgroundColor};
+    color: ${props => props.theme.textColor};
   }
 
   button {
