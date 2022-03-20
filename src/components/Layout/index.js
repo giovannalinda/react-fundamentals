@@ -21,6 +21,7 @@ export default function Layout({
       <S.Nav>
         <Link to='/'>Home</Link>
         <Link to='/posts'>Posts</Link>
+        <Link to='/posts/12345'>Post</Link>
       </S.Nav>
 
       <Routes />
