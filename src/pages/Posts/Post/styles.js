@@ -6,6 +6,7 @@ export const Container = styled.article`
   flex-direction: column;
   padding: 16px;
   border-radius: 10px;
+  min-width: 87rem;
 
   h2 {
     margin: 0 0 8px;

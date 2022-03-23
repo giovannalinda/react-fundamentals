@@ -25,10 +25,11 @@ export default function Layout({
       </S.Nav>
 
       <Routes />
-      <Footer 
+
+      {/* <Footer 
         onToggleTheme={onToggleTheme} 
         selectedTheme={selectedTheme} 
-      />
+      /> */}
     </BrowserRouter>
   )
 }
